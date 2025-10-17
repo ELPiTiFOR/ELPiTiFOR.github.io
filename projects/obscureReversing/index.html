@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ELPiTiFOR's Blog</title>
+        <link href="../../styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="mainHeader">
+            <h1>ObsCure Reversing by ELPiTiFOR</h1>
+            <div class="headerLinks">
+                <a href="../../index.html"><button>Start</button></a>
+            </div>
+        </header>
+        <main class="mainContentContainer">
+            <div class="mainContent">
+                <h2>About ObsCure</h2>
+                <p>
+                    ObsCure is a Survival Horror game from 2004 developed by French team Hydravision. In ObsCure you play as a
+                    group of 5 high schoolers who lock themselves inside to look for a friend and unveil the secrets of the
+                    educational center. It's a typical Survival Horror from the 2000s with fixed cameras and limited ammunition
+                    and health items.
+                </p>
+                <p>
+                    It's an old game, but it's still on sale on Steam, this version was developed by Mighty Rocket Studio.
+                </p>
+
+                <h2>How it all started</h2>
+                <p>
+                    ObsCure is my favourite game of all time, and I've spent hours playing it, speedrunning it, making
+                    researches, talking about it with members of the community... Knowing every detail from the game
+                    has always fascinated me, so it was a matter of time that I became curious enough to go look into
+                    the game files and to try to modify the game.
+                </p>
+                <p>
+                    Nevertheless, most of the game files were packaged in several `.hvp` files. Thanks to the efforts of the
+                    members of the small (yet very passionate) community, a tool for unpacking these files had already been
+                    developed when I started looking into them. This allowed me to dig into the depths of ObsCure. I started
+                    to take a shallow look at the files through Notepad, but they were unreadable. After that, I downloaded
+                    HxD, which is a software to read the contents of a file in Hexadecimal representation, which allowed me
+                    to see all the bytes in the file, even the non-printable characters. Sadly I still didn't understand it
+                    so I gave up at the time. Until one day, everything changed...
+                </p>
+                <p>
+                    One day I was looking at the `allitems.it` file, which I assumed had something to do with the items that
+                    you can pick up in the game (weapons, cures, etc), and which I had already tried to read a while ago,
+                    but this time I had an idea. HxD shows you the hexadecimal representation in the left part of the screen
+                    and the ASCII corresponding characters in the right part, and I noticed that a certain pattern seemed to
+                    appear in the right side. All the printable characters seemed to be equally distant from the next one,
+                    so I used the selection feature to count the distance between those bytes, which was 20, and configured
+                    the hex editor to display 20 bytes per row. All of a sudden, all those values aligned themselves
+                    together, and I felt like a kid who just made the biggest discovery in History.
+                </p>
+                <!--image></image>
+                <image></image-->
+            </div>
+        </main>
+    </body>
+</html>
