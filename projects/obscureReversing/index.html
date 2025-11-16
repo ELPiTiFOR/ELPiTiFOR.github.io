@@ -10,6 +10,7 @@
             <h1>ObsCure Reversing by ELPiTiFOR</h1>
             <div class="headerLinks">
                 <a href="../../index.html"><button>Start</button></a>
+                <a href="executableInsides/index.html"><button>Exe Insides</button></a>
             </div>
         </header>
         <main class="mainContentContainer">
@@ -51,8 +52,34 @@
                     the hex editor to display 20 bytes per row. All of a sudden, all those values aligned themselves
                     together, and I felt like a kid who just made the biggest discovery in History.
                 </p>
-                <!--image></image>
-                <image></image-->
+
+                <div class="centeredImage">
+                    <img src="resources/allitems_aligned_20.jpg" style="height: 600px;"/>
+                </div>
+
+                <p>
+                    Altough I still didn't understand the content of the file, I was able to see that it seemed like a
+                    sequence of elements of 20 bytes each, and that almost every element had specific properties at
+                    specific offsets. I also noticed the third byte of each row had a value between 0 and 2, and that
+                    the last byte was usually `0x07` (0b0111 in binary), or some other value between 1 and 7 (mostly),
+                    which made me think that byte was actually containing flags and not really numerical values, among
+                    other discoveries. I then started noting all the different values that I could find per column to
+                    try to figure out what the values meant, and I started modifying some specific patterns with other
+                    patterns and run the game to see what changed, and ultimately deduct their meaning. That was the
+                    beginning of this beautiful journey.
+                </p>
+                <h2>And then?</h2>
+                <p>
+                    Since my first objective was to modify the items that you can pick up in the game, I kept digging
+                    into the `allitems.it` file, and then I started looking into the `.tm` files of each room because
+                    I found the ID of the yellow baseball bat in on of them. Once I figured out most of how items worked,
+                    I made a first version of my ObsCure Randomizer, but in order to complete it I had to look into
+                    the `.hoe` files. Later, I was also intrigued by how the game would store the information of the
+                    progress in the savefiles (`.sav`), so I started looking into them as well, and ultimately made my
+                    ObsCure SaveGame Manager. Then I also started taking a look at the executable file, to try to unveil
+                    the different structures and classes used in the game, and how they intereact with each other. Maybe
+                    I could work myself in a decompilation of the game...
+                </p>
             </div>
         </main>
     </body>

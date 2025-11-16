@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ELPiTiFOR's Blog</title>
+        <link href="../../../styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="mainHeader">
+            <h1>ObsCure: Digging into the executable by ELPiTiFOR</h1>
+            <div class="headerLinks">
+                <a href="../../../index.html"><button>Start</button></a>
+                <a href="../index.html"><button>Start ObsCure Reversing</button></a>
+            </div>
+        </header>
+        <main class="mainContentContainer">
+            <div class="mainContent">
+                <h2>Tools</h2>
+                <p>
+                    The executable file is, of course, written (or should I say "generated") in machine code. Reading its raw
+                    content isn't even an option. Luckily we have these tools called "disassemblers" that translate the machine
+                    code that can be understood by our x86/x64 CPU to assembly language that we humans can read. I didn't know
+                    any disassemblers so when I discovered Binary Ninja I just used that one arbitrarily.
+                </p>
+                <p>
+                    Being able to read the instructions in assembly is already pretty fascinating, you can see exactly what the
+                    processor does when running the game. Nevertheless, assembly language is a bit hard to read if you aren't
+                    used to it, because the instructions are very basic: adding the values of two registers, computing a memory
+                    address, shifting the bits of a register to the left/right, copy a value from a source to a destination, etc.
+                    Reading the behaviour of a game, which is a coplex software that involves several engines (3D, AI, physics)
+                    in the form of operations, copying small data, and (un)conditional jumps is very difficult. Not only that,
+                    but, as usual, the executable doesn't have debug symbols, so all the functions defined in it are unnamed,
+                    they are just refered to by their address in memory, which means that we have to find out what each function
+                    does.
+                </p>
+                <p>
+                    To help us unveiling the depths of the game, we can also use a debugger that lets us run the game step by
+                    step, instruction by instruction, so that we can see the changes in the registers and the memory and have
+                    a better understanding of how the game actually manages information and how it implements all the features
+                    it has. One of the most useful things these debuggers can do is setting a breakpoint at a specific
+                    instruction at a specific address so that the game only pauses when that line is reached. This is very
+                    helpful, for example, to know when a specific function is called, and that way we can have a hint on what
+                    context that piece of code is used. The debugger I use is x64dbg, or to be more specific, x32dbg, because
+                    ObsCure is a 32-bit program.
+                </p>
+                <p>
+                    Another important part of reversing a piece of software is having a look at the memory, the RAM. This will
+                    help us see how the variables change, and what the structures and objects look like. For this purpose I use
+                    Cheat Engine, which also lets me create a cheat table to have a quick view on specific addresses, so that I
+                    don't have to manually enter the addresses all the time, or dereference the pointers stored in memory
+                    manually.
+                </p>
+            </div>
+        </main>
+    </body>
+</html>
